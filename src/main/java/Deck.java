@@ -1,5 +1,6 @@
 /**
- * The Deck class represents a deck of cars that can be drawn from and shuffled
+ * The Deck class represents a deck of cards that can be drawn from and shuffled
+ * It allows the deck of cards to be shuffled, drawn, added, and reshuffled.
  * @author Kelly Fu
  * @version 17.0.1
  */
@@ -13,14 +14,14 @@ public class Deck{
     
 /**
  * Constructs an array of cards and sets it as the deck
- * @param givenCards array of Card objects
+ * @param initialCards array of Card objects
  */
-public Deck(Card[] givenCards){
-        if(givenCards != null){
-            this.deck = givenCards;
+public Deck(Card[] initialCards){
+        if(initialCards != null){
+            this.deck = initialCards;
            }
         else{
-            givenCards = new Card[0];
+            initialCards = new Card[0];
         }
         }
 
