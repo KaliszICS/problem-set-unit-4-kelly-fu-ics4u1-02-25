@@ -15,7 +15,6 @@ public class DiscardPile {
 public DiscardPile(Card[] givenCards){
     if (givenCards != null){
         this.discardPile = givenCards;
-
     }
     else{
         this.discardPile = new Card[0];
@@ -64,13 +63,11 @@ public void addCard(Card card){
  */
 public Card removeCard(Card card){
     if (card == null || this.discardPile.length == 0){
-        Card removed = this.discardPile[i];
         return null;
     }
     for (int i = 0; i < this.discardPile.length; i++){
         if (this.discardPile[i].equals(card)){
             Card removedCards = this.discardPile[i];
-
             Card[] currentPile = new Card[this.discardPile.length - 1];
             int index = 0;
             for (int j = 0; j < discardPile.length; j++){
@@ -85,5 +82,33 @@ public Card removeCard(Card card){
     }
     return null;
 }
+
+/**
+ * Removes the array of all cards from the discard pile
+ * If there are no cards in the discard pile return an empty Card array
+ * @return an array of all cards from the discard pile
+ */
+public Card[] removeAll(){
+    Card[] allCards = this.discardPile;
+    this.discardPile = new Card[0];
+    return allCards;
+}
+
+/**
+ * Returns all of the cards in the specific format(eg. "Ace of hearts, King of Hearts, Queen of Hearts, Jack of Hearts, 9 of Spades.")
+ * @return the String format of the discard pile
+ */
+public String toString(){
+    String result = "";
+    for (int i = 0; i < this.discardPile.length; i++){
+        result = result + this.discardPile[i].toString();
+        if (i < this.discardPile.length - 1){
+            result = result + ", ";
+        }
+        
+    }
+    return result;
+}
+
 
 }
