@@ -28,14 +28,6 @@ public String getName(){
     return name;
 }
 
-/**
- * Sets the card's name
- * @param name the new name of the card
- */
-public void setName(String name){
-    this.name = name;
-}
-
 
 /**
  * Gets the card's suit
@@ -45,43 +37,33 @@ public String getSuit(){
     return suit;
 }
 
-/**
- * Sets the card's suit
- * @param suit the new suit of the card
- */
-public void setSuit(String suit){
-    this.suit = suit;
-}
 
 /**
  * Gets the card's value
  * @return the card's value
  */
-public int value(){
+public int getValue(){
     return value;
 }
 
+
 /**
- * Sets the card's value
- * @param value the new value of the card
+ * Returns its full form (e.g. "Queen of Diamonds" if the name is "Queen" and the suit is "Diamonds")
  */
-public void setValue(int value){
-    this.value = value;
-}
-
-
+@Override
 public String toString(){
-    return name + " of " + suit;
+    return this.name + " of " + this.suit;
 }
 
+/**
+ * Checks if the two cards have the same name, suit and value
+ */
+@Override
 public boolean equals(Object obj){
-    if (this == obj){
-        return true;
-    }
-    if (obj == null || getClass() != obj.getClass()){
+    if (obj == null || obj.getClass() != this.getClass()){
         return false;
     }
     Card card = (Card) obj;
-    return value == card.value && name.equals(card.name) && suit.equals(card.suit);
+    return this.value == card.value && this.name.equals(card.name) && this.suit.equals(card.suit);
 }
 }
