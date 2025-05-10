@@ -23,6 +23,14 @@ public DiscardPile(Card[] givenCards){
 
 /**
  * Constructs an empty discard pile with no parameters
+ */
+public DiscardPile(){
+    this.discardPile = new Card[0];
+}
+
+
+/**
+ * Returns the discard pile as an array of cards
  * @return the array of cards in the pile
  */
 public Card[] getDiscardPile(){
@@ -58,6 +66,7 @@ public void addCard(Card card){
 /**
  * Removes the specified card from the discard pile and returns it
  * If the card does not exist, return null
+ * @param card the card to remove
  * @return card the card to remove
  * @return the removed card or null if the card does not exist
  */
