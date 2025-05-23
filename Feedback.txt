@@ -1,0 +1,7 @@
+K(30%): 100
+I(30%): 98
+C(10%): 100
+A(30%): 100
+99.4 of 90 = 89.46%
+Using an arraylist would simplify a lot of your code and work a lot better
+reuse your addCard and shuffle in your reshuffle to simplify the code by a lot!
